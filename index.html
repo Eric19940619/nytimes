@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>N.Y Times</title>
+    <script src="https://kit.fontawesome.com/172368dcad.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="main-nav">
+      <input type="checkbox" name="menu-checkbox" id="menu-checkbox" />
+      <label for="menu-checkbox" class="hamburger-menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </label>
+      <div class="logo"><img src="./image/logo.png" alt="" /></div>
+    </header>
+
+    <div class="news">
+      <main>
+        <div class="news-wrap">
+          <template id="news-item">
+            <article>
+              <img src="" />
+              <div class="news-text">
+                <h2>title</h2>
+                <span>time</span>
+                <span>type</span>
+                <p>abstract</p>
+                <a href="">More</a>
+              </div>
+            </article>
+          </template>
+        </div>
+        <p class="page">Loading</p>
+      </main>
+
+      <button class="go-top">Top</button>
+
+      <aside>
+        <div class="aside-block">
+          <h3>搜尋</h3>
+          <div class="search">
+            <input type="text" />
+            <button>
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <div class="aside-block">
+          <h3>分類</h3>
+          <ul class="category"></ul>
+          <template id="category-item">
+            <li>
+              <a href="nytimes.html"><i class="fas fa-chevron-right"></i>All</a>
+            </li>
+          </template>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <p>&copy;2020 by Eric</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="./javascript/nytimes.js"></script>
+  </body>
+</html>
