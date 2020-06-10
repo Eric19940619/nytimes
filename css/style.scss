@@ -25,6 +25,12 @@ img {
   vertical-align: middle;
 }
 
+input {
+  -webkit-appearance: none; /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+  -moz-appearance: none; /* FireFox */
+  appearance: none;
+}
+
 h2 {
   @include font-setting($font-size-xl, $font-weight-bold);
 }
@@ -93,7 +99,7 @@ a {
 }
 
 .aside-show {
-  width: 25px;
+  width: 30px;
   height: 50px;
   border-radius: 10px 0px 0px 10px;
   background-color: #aaa;
@@ -106,7 +112,7 @@ a {
   top: 50%;
   z-index: 2;
   transition: 0.2s;
-  transform: translateX(-25px);
+  transform: translateX(-30px);
   i {
     transition: 0.2s;
     position: absolute;

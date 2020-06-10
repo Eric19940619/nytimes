@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 12px;
@@ -6,6 +7,14 @@ html {
 img {
   width: 100%;
   vertical-align: middle;
+}
+
+input {
+  -webkit-appearance: none;
+  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+  -moz-appearance: none;
+  /* FireFox */
+  appearance: none;
 }
 
 h2 {
@@ -99,7 +108,7 @@ a {
 }
 
 .aside-show {
-  width: 25px;
+  width: 30px;
   height: 50px;
   border-radius: 10px 0px 0px 10px;
   background-color: #aaa;
@@ -114,8 +123,8 @@ a {
   z-index: 2;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  -webkit-transform: translateX(-25px);
-          transform: translateX(-25px);
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
 }
 
 .aside-show i {
