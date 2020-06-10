@@ -131,15 +131,3 @@ gotop.addEventListener('click', function (e) {
     behavior: 'smooth',
   })
 })
-
-/* control aside show or not */
-checkbox = document.getElementById('menu-checkbox')
-aside = document.querySelector('aside')
-
-checkbox.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    aside.style.transform = 'translateX(0%)'
-  } else {
-    aside.style.transform = 'translateX(-100%)'
-  }
-})

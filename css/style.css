@@ -29,8 +29,6 @@ a {
 }
 
 .news {
-  width: 90%;
-  margin: 0 auto;
   width: 100%;
   margin: 40px auto;
   display: -webkit-box;
@@ -56,6 +54,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 5;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,70 +73,6 @@ a {
 
 .main-nav .logo img {
   width: 100%;
-}
-
-.hamburger-menu {
-  width: 40px;
-  height: 32px;
-  margin: auto;
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.icon-bar {
-  height: 4px;
-  background-color: #ccc;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  border-radius: 999rem;
-}
-
-.hamburger-menu .icon-bar:nth-child(1) {
-  width: 90%;
-}
-
-.hamburger-menu .icon-bar:nth-child(2) {
-  width: 50%;
-}
-
-.hamburger-menu .icon-bar:nth-child(3) {
-  width: 75%;
-}
-
-#menu-checkbox {
-  width: 0px;
-  height: 0px;
-  z-index: -1;
-  position: absolute;
-  top: -100%;
-  left: -100%;
-}
-
-#menu-checkbox:checked ~ .hamburger-menu .icon-bar {
-  width: 100%;
-}
-
-#menu-checkbox:checked ~ nav a {
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  opacity: 1;
-  visibility: visible;
 }
 
 .go-top {
@@ -161,6 +96,56 @@ a {
 .go-top:hover {
   background-color: #ff8800;
   cursor: pointer;
+}
+
+.aside-show {
+  width: 25px;
+  height: 50px;
+  border-radius: 10px 0px 0px 10px;
+  background-color: #aaa;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  border: none;
+  outline: none;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: translateX(-25px);
+          transform: translateX(-25px);
+}
+
+.aside-show i {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: rotateZ(180deg) translate(50%, 50%);
+          transform: rotateZ(180deg) translate(50%, 50%);
+}
+
+#aside-show-cb {
+  width: 0;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+#aside-show-cb:checked ~ aside > .aside-show > i {
+  -webkit-transform: rotateZ(0deg) translate(-50%, -50%);
+          transform: rotateZ(0deg) translate(-50%, -50%);
+}
+
+#aside-show-cb:checked ~ aside {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
 article {
@@ -217,12 +202,13 @@ aside {
   height: calc(100vh - 40px);
   position: fixed;
   top: 40px;
-  left: 0;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  right: 0;
+  z-index: 4;
   background-color: #fff;
   -webkit-transition: 0.7s ease-out;
   transition: 0.7s ease-out;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 aside .aside-block {
@@ -295,9 +281,6 @@ footer {
   html {
     font-size: 16px;
   }
-  .hamburger-menu {
-    display: none;
-  }
   .news {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -314,11 +297,24 @@ footer {
     width: 60%;
     margin-left: 5%;
   }
+  .aside-show {
+    display: none;
+  }
   aside {
     width: 35%;
     height: auto;
-    position: relative;
     margin: 0 auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }

@@ -39,8 +39,6 @@ a {
 }
 
 .news {
-  width: 90%;
-  margin: 0 auto;
   width: 100%;
   margin: 40px auto;
   display: flex;
@@ -60,6 +58,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 5;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -69,55 +68,6 @@ a {
     img {
       width: 100%;
     }
-  }
-}
-
-.hamburger-menu {
-  width: 40px;
-  height: 32px;
-  margin: auto;
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  transform: scale(0.8);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.icon-bar {
-  height: 4px;
-  background-color: #ccc;
-  transition: 0.3s;
-  border-radius: 999rem;
-}
-
-.hamburger-menu .icon-bar:nth-child(1) {
-  width: 90%;
-}
-.hamburger-menu .icon-bar:nth-child(2) {
-  width: 50%;
-}
-.hamburger-menu .icon-bar:nth-child(3) {
-  width: 75%;
-}
-
-#menu-checkbox {
-  width: 0px;
-  height: 0px;
-  z-index: -1;
-  position: absolute;
-  top: -100%;
-  left: -100%;
-
-  &:checked ~ .hamburger-menu .icon-bar {
-    width: 100%;
-  }
-  &:checked ~ nav a {
-    transform: translateX(0px);
-    opacity: 1;
-    visibility: visible;
   }
 }
 
@@ -140,6 +90,48 @@ a {
 .go-top:hover {
   background-color: #ff8800;
   cursor: pointer;
+}
+
+.aside-show {
+  width: 25px;
+  height: 50px;
+  border-radius: 10px 0px 0px 10px;
+  background-color: #aaa;
+  color: #fff;
+  box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.3);
+  position: fixed;
+  border: none;
+  outline: none;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  transition: 0.2s;
+  transform: translateX(-25px);
+  i {
+    transition: 0.2s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotateZ(180deg) translate(50%, 50%);
+  }
+}
+
+#aside-show-cb {
+  width: 0;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+#aside-show-cb:checked ~ aside > .aside-show > i {
+  transform: rotateZ(0deg) translate(-50%, -50%);
+}
+
+#aside-show-cb:checked ~ aside {
+  transform: translateX(0%);
 }
 
 article {
@@ -191,10 +183,11 @@ aside {
   height: calc(100vh - 40px);
   position: fixed;
   top: 40px;
-  left: 0;
-  transform: translateX(-100%);
+  right: 0;
+  z-index: 4;
   background-color: #fff;
   transition: 0.7s ease-out;
+  transform: translateX(100%);
 
   .aside-block {
     width: 100%;
@@ -260,9 +253,6 @@ footer {
   html {
     font-size: 16px;
   }
-  .hamburger-menu {
-    display: none;
-  }
 
   .news {
     flex-direction: row;
@@ -274,11 +264,18 @@ footer {
     }
   }
 
+  .aside-show {
+    display: none;
+  }
+
   aside {
     width: 35%;
     height: auto;
-    position: relative;
     margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     transform: translateX(0);
     .aside-block {
       width: 80%;
