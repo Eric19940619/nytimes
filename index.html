@@ -15,7 +15,9 @@
 
   <body>
     <header class="main-nav">
-      <div class="logo"><img src="./image/logo.png" alt="" /></div>
+      <a class="logo" href="">
+        <img src="./image/logo.png" alt="" />
+      </a>
     </header>
 
     <div class="news">
@@ -45,10 +47,12 @@
         <div class="aside-block">
           <h3>搜尋</h3>
           <div class="search">
-            <input type="search" placeholder="Search" />
-            <button type="submit">
-              <i class="fa fa-search"></i>
-            </button>
+            <div class="search-bar">
+              <input class="search-input" type="text" name="search" id="search" placeholder="Search" />
+              <button class="search-btn">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
           </div>
         </div>
         <div class="aside-block">

@@ -1,7 +1,7 @@
 //字體大小
 $font-size-small: 0.8rem;
 $font-size-regular: 1rem;
-$font-size-large: 1.6rem;
+$font-size-large: 1.5rem;
 $font-size-xl: 2rem;
 $font-size-xxl: 2.4rem;
 //字體粗體
@@ -191,11 +191,15 @@ aside {
 
   .aside-block {
     width: 100%;
-    margin: auto;
-    padding: 5px 0;
+    margin: 0 auto;
+
     h3 {
-      display: none;
+      text-align: center;
     }
+  }
+
+  .aside-block:nth-child(2) h3 {
+    display: none;
   }
 
   .search {
@@ -203,23 +207,30 @@ aside {
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    font-size: 0;
+  }
 
-    input,
-    button {
-      outline: none;
-      background-color: #f0f0f0;
-      border: none;
-      padding: 5px 10px;
-      appearance: none;
-    }
-    input {
-      width: 70%;
-    }
-
-    button {
-      cursor: pointer;
-    }
+  .search-bar {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 5px;
+    border: none;
+  }
+  .search-input {
+    width: 100%;
+    outline: none;
+    appearance: none;
+    border: none;
+    border-bottom: solid 1.5px #ccc;
+    padding: 3px 5px;
+  }
+  .search-btn {
+    outline: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    color: #ccc;
+    cursor: pointer;
   }
 
   .category {
@@ -278,10 +289,11 @@ footer {
     flex-direction: column;
     justify-content: center;
     transform: translateX(0);
+
     .aside-block {
       width: 80%;
+      margin: 10px auto;
       h3 {
-        display: block;
         padding: 10px 0;
         background-color: #aaa;
         color: #fff;
@@ -289,27 +301,38 @@ footer {
       }
     }
 
+    .aside-block:nth-child(2) h3 {
+      display: block;
+    }
+
     .search {
+      background-color: #ccc;
       padding: 20px 0;
+    }
+
+    .search-bar {
+      width: 70%;
       display: flex;
-      justify-content: center;
-      background-color: #f0f0f0;
-
-      input,
-      button {
-        outline: none;
-        background-color: #fff;
-        border: none;
-        padding: 5px 10px;
-        appearance: none;
-      }
-      input {
-        width: 70%;
-      }
-
-      button {
-        cursor: pointer;
-      }
+      flex-wrap: nowrap;
+      padding: 5px;
+      border-radius: 10px;
+      border: solid 3px #ccc;
+      background-color: #fff;
+    }
+    .search-input {
+      width: 100%;
+      outline: none;
+      appearance: none;
+      border: none;
+      padding: 3px 5px;
+    }
+    .search-btn {
+      outline: none;
+      appearance: none;
+      border: none;
+      background-color: transparent;
+      color: #ccc;
+      cursor: pointer;
     }
 
     .category {
