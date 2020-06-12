@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 12px;
@@ -7,14 +6,6 @@ html {
 img {
   width: 100%;
   vertical-align: middle;
-}
-
-input {
-  -webkit-appearance: none;
-  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
-  -moz-appearance: none;
-  /* FireFox */
-  appearance: none;
 }
 
 h2 {
@@ -237,7 +228,11 @@ aside .search {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #fff;
+  font-size: 0;
 }
 
 aside .search input,
@@ -245,16 +240,17 @@ aside .search button {
   outline: none;
   background-color: #f0f0f0;
   border: none;
-  padding: 2px 5px;
+  padding: 5px 10px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 aside .search input {
   width: 70%;
-  border-radius: 200px 0 0 200px;
 }
 
 aside .search button {
-  border-radius: 0 200px 200px 0;
   cursor: pointer;
 }
 
@@ -338,6 +334,7 @@ footer {
     text-align: center;
   }
   aside .search {
+    padding: 20px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -352,14 +349,14 @@ footer {
     background-color: #fff;
     border: none;
     padding: 5px 10px;
-    margin: 20px 0px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
   }
   aside .search input {
     width: 70%;
-    border-radius: 200px 0 0 200px;
   }
   aside .search button {
-    border-radius: 0 200px 200px 0;
     cursor: pointer;
   }
   aside .category li {

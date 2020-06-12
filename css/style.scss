@@ -25,12 +25,6 @@ img {
   vertical-align: middle;
 }
 
-input {
-  -webkit-appearance: none; /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
-  -moz-appearance: none; /* FireFox */
-  appearance: none;
-}
-
 h2 {
   @include font-setting($font-size-xl, $font-weight-bold);
 }
@@ -207,22 +201,23 @@ aside {
   .search {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #fff;
+    font-size: 0;
 
     input,
     button {
       outline: none;
       background-color: #f0f0f0;
       border: none;
-      padding: 2px 5px;
+      padding: 5px 10px;
+      appearance: none;
     }
     input {
       width: 70%;
-      border-radius: 200px 0 0 200px;
     }
 
     button {
-      border-radius: 0 200px 200px 0;
       cursor: pointer;
     }
   }
@@ -295,6 +290,7 @@ footer {
     }
 
     .search {
+      padding: 20px 0;
       display: flex;
       justify-content: center;
       background-color: #f0f0f0;
@@ -305,15 +301,13 @@ footer {
         background-color: #fff;
         border: none;
         padding: 5px 10px;
-        margin: 20px 0px;
+        appearance: none;
       }
       input {
         width: 70%;
-        border-radius: 200px 0 0 200px;
       }
 
       button {
-        border-radius: 0 200px 200px 0;
         cursor: pointer;
       }
     }
